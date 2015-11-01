@@ -1,0 +1,24 @@
+## Name: Jixiao Ma(jmq856) Huaipei Lu(hlv624) Ang Shen(asi031)
+## Date: 06/05/2015
+## Description: Confusion Matrix for basic and best classifier. Write-up questions.
+
+1. What features did you try?
+   We have tried four featrues that 
+   a) the length of stroke
+   b) the curvature of stroke
+   c) the average distance to sketch sides for every stroke
+   d) the bounding box area (not used in the program)
+
+2. Were they continuous or discrete?
+   a) and c) are dicrete
+   b) is continuous
+
+3. How did you determine thresholds for discrete features?
+   a) is as provided that less than 300 is text, greater than 300 is drawing.
+   c) is kind of complex. We calculate the leftmost edge and rightmost edge for one xml file, and the range is leftmost to rightmost, we think 20% of range to the leftmost and 20% of range to the rightmost is classified as text, otherwise drawing.
+
+4. We use all the files to train and all the files to test.
+   The results are:
+   basic -> {'text': {'text': 395, 'drawing': 346}, 'drawing': {'text': 349, 'drawing': 925}}
+   best  -> {'text': {'text': 494, 'drawing': 247}, 'drawing': {'text': 275, 'drawing': 999}}
+   
